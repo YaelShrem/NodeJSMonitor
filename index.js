@@ -3,7 +3,7 @@ const app = express();
 const PORT = 5000;
 const responseTime=require("response-time");
 const logger=require("./utils/logger");
-const swaggerDocs=require("./utils/swagger");
+// const swaggerDocs=require("./utils/swagger");
 const { restResponseTimeHistogram, startMetricsServer }=require("./utils/metrics");
 
 app.use(express.json());
@@ -26,8 +26,8 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, async () => {
-    logger.info(`App is running at http://localhost:${port}`);
+    logger.info(`App is running at http://localhost:${PORT}`);
     startMetricsServer();
-    swaggerDocs(app, port);
+    // swaggerDocs(app, port);
 });
 
